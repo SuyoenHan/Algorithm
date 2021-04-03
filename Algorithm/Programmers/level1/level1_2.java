@@ -22,10 +22,11 @@ public class level1_2 {
 		int[] result= new int[len];
 		List<Integer> arraySplit;
 		
-		for(int i=0;i<commands.length;i++) {
+		// commands 배열에서 각각의 i,j,k 값 가져오기
+		for(int i=0;i<commands.length;i++) {  
 			arraySplit= new ArrayList<>();
 			
-			for(int j=0;j<commands[i].length;j++) {
+			for(int j=0;j<commands[i].length;j++) {  
 				
 				if(j==0) {
 					first= commands[i][j];
@@ -38,12 +39,12 @@ public class level1_2 {
 				}
 			}
 			
-			for(int k=first-1;k<second;k++) {
+			for(int k=first-1;k<second;k++) { // i부터 j값 까지 배열 추출해서 arrayList에 담아주기
 				arraySplit.add(array[k]);
 			}
 			
-			Collections.sort(arraySplit);
-			result[i]=arraySplit.get(third-1);
+			Collections.sort(arraySplit);  // arrayList 오름차순 정렬
+			result[i]=arraySplit.get(third-1); // arrayList에서 k번째 값 가져오고, result 배열에 담아주기
 		}
 		
 		System.out.println(result);
