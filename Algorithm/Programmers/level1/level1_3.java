@@ -9,8 +9,10 @@ public class level1_3 {
 	public static void main(String[] args) {
 	
 		// 주어진 시험문제 정답을 가장 많이 맞춘 사람 구하기
+		// 수정1) 사람별 try-catch 구문을 각각 for문별 try-catch 구문으로 수정
 		
-		int[] answers= new int[]{1,3,2,4,2};  // answer 배열의 값과 길이는 달라지므로 변수로 풀이하기
+		
+		int[] answers= new int[]{1,1};  // answer 배열의 값과 길이는 달라지므로 변수로 풀이하기
 		int[] person_1=new int[answers.length];
 		int[] person_2=new int[answers.length];
 		int[] person_3=new int[answers.length];
@@ -18,37 +20,54 @@ public class level1_3 {
 		
 		// 1번 수포자가 찍는 방식
 		try {
-			for(int i=0;i<answers.length;i+=5) {
+			for(int i=0;i<answers.length;i+=5) { 
 				person_1[i]=1;
 			}
+		}catch(Exception e) {}
+		try {
 			for(int i=1;i<answers.length;i+=5) {
 				person_1[i]=2;
 			}
+		}catch(Exception e) {}	
+		try {	
 			for(int i=2;i<answers.length;i+=5) {
 				person_1[i]=3;
 			}
+		}catch(Exception e) {}
+		try {	
 			for(int i=3;i<answers.length;i+=5) {
 				person_1[i]=4;
 			}
+		}catch(Exception e) {}	
+		try {	
 			for(int i=4;i<answers.length;i+=5) {
 				person_1[i]=5;
 			}
-		}catch(Exception e) {}
+		}catch(Exception e) {}	
+		
 		
 		// 2번 수포자가 찍는 방식
 		try {
 			for(int i=0;i<answers.length;i+=2) {
 				person_2[i]=2;
 			}
+		} catch(Exception e) {}	
+		try {	
 			for(int i=1;i<answers.length;i+=8) {
 				person_2[i]=1;
 			}
+		} catch(Exception e) {}	
+		try {	
 			for(int i=3;i<answers.length;i+=8) {
 				person_2[i]=3;
 			}
+		} catch(Exception e) {}	
+		try {	
 			for(int i=5;i<answers.length;i+=8) {
 				person_2[i]=4;
 			}
+		} catch(Exception e) {}	
+		try {	
 			for(int i=7;i<answers.length;i+=8) {
 				person_2[i]=5;
 			}
@@ -60,18 +79,26 @@ public class level1_3 {
 				person_3[i]=3;
 				person_3[i+1]=3;
 			}
+		} catch(Exception e) {}	
+		try {	
 			for(int i=2;i<answers.length;i+=10) {
 				person_3[i]=1;
 				person_3[i+1]=1;
 			}
+		} catch(Exception e) {}	
+		try {	
 			for(int i=4;i<answers.length;i+=10) {
 				person_3[i]=2;
 				person_3[i+1]=2;
 			}
+		} catch(Exception e) {}	
+		try {	
 			for(int i=6;i<answers.length;i+=10) {
 				person_3[i]=4;
 				person_3[i+1]=4;
 			}
+		} catch(Exception e) {}	
+		try {	
 			for(int i=8;i<answers.length;i+=10) {
 				person_3[i]=5;
 				person_3[i+1]=5;
@@ -130,8 +157,10 @@ public class level1_3 {
 			answer[i]=person.get(i);
 		}
 		
-	
-		System.out.println(answer[0]);
+		System.out.println(score_1);
+		System.out.println(score_2);
+		System.out.println(score_3);
+		System.out.println(answer[1]);
 	}// end of main ----------------------
 	
 }
