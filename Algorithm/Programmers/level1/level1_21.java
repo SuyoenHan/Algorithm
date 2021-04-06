@@ -17,9 +17,10 @@ public class level1_21 {
 		 */
 		
 		int num= 626331;
+		long num2= num;  // 8000000 미만의 정수가 입력된다    => 즉 int num의 범위를 넘어갈 수 도 있다는 뜻!!
 		int cnt=0;
 		
-		while(num!=1) {
+		while(num2!=1) {
 			cnt++;
 			
 			if(cnt>500) {
@@ -27,12 +28,12 @@ public class level1_21 {
 				break;
 			}
 			
-			if(num%2==0) {  // num이 짝수인경우
-				num= num/2;
+			if(num2%2==0) {  // num2이 짝수인경우
+				num2= num2/2;
 				
 			}
-			else { // num이 홀수인경우
-				num= num*3+1;
+			else { // num2이 홀수인경우
+				num2= num2*3+1;
 			}
 			
 		} //end of while--------
