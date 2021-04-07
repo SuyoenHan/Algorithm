@@ -15,8 +15,9 @@ public class Level1_23 {
 		// 인덱스 n의 문자와 같은 문자열이 여럿 일 경우, 사전순으로 앞선 문자열이 앞쪽에 위치
 		
 		
-		String[] strings= new String[] {"abce", "abcd", "cdx"};
+		String[] strings= new String[] {"abzcd","cdzab","abzfg","abzaa","abzbb","bbzaa"};
 		int n=2;
+		
 		
 		String[] answer= new String[strings.length];
 		
@@ -26,12 +27,12 @@ public class Level1_23 {
 		}
 		
 		Collections.sort(stringList);  
-		char smallChar= strings[0].charAt(n);
+		char smallChar= stringList.get(0).charAt(n);
 		int index=0;
 		int small=0;
 		
 		do {
-			smallChar= strings[0].charAt(n);  // 초기화
+			smallChar= stringList.get(0).charAt(n);  // 초기화
 			small=0; // 초기화
 			for(int i=0;i<stringList.size();i++) {
 				char indexChar= stringList.get(i).charAt(n);
@@ -47,7 +48,6 @@ public class Level1_23 {
 		} while(stringList.size()!=0);
 		
 		System.out.println(answer[0]);
-		
 	}// end of main ----------------------
 	
 }
