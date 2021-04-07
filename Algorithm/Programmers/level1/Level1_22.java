@@ -34,7 +34,7 @@ public class Level1_22 {
 			
 		}
 		
-		System.out.println(answer);
+		System.out.println(answer); 
 		
 	}// end of main ----------------------
 	
