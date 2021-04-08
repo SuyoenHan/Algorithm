@@ -12,9 +12,10 @@ public class Level1_29 {
 	// 문자열 s는 한개 이상의 단어로 구성되어 있다. 각 단어는  하나 이상의 공백문자로 구분되어 있다
 	// 각 단어의 짝숸째 알파벳은 대문자로, 홀수번쨰 알파벳은 소문자로 바꾼 문자열 만들기 
 		
-		String s= "try hello   world";
+		String s= "sp   ace";
 		
 		String temp="";
+		String temp2="";
 		String answer="";
 		List<Character> sList= new ArrayList<>();
 		
@@ -42,17 +43,33 @@ public class Level1_29 {
 			for(int j=0;j<eachStringArr.length;j++) {
 				
 				if(j%2==0) { // 짝수에 위치한 경우
-					answer+=String.valueOf(eachStringArr[j]).toUpperCase();
+					temp2+=String.valueOf(eachStringArr[j]).toUpperCase();
 				}
 				else { // 홀수에 위치한 경우
-					answer+=String.valueOf(eachStringArr[j]).toLowerCase();
+					temp2+=String.valueOf(eachStringArr[j]).toLowerCase();
 				}
 			}
-			
-			String str=(i==tempArr.length-1)?"":" ";
-			answer+=str;
-		} // end of for-----
 		
+		} // end of for------------
+		
+		
+		// 공백이 여러개 있으면 나중 결과물에서도 공백 개수대로 출력해주는 걸 고려해야 한다...
+		char[] answerArr= new char[s.length()];
+		int index=0;
+		
+		for(int i=0;i<answerArr.length;i++) {
+			
+			if((int)s.charAt(i)==32) { // 공백인 경우
+				answerArr[i]=' ';
+			}
+			else { // 공백이 아닌경우
+				answerArr[i]=temp2.charAt(index);
+				index++;
+			}
+		} // end of for----------------
+		
+		
+		answer= String.valueOf(answerArr);
 		System.out.println(answer);
 		
 		
